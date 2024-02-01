@@ -70,7 +70,9 @@
             {% endif %}
             <!-- this is jinja2 for loop syntax-->
             {% for item in newdocs %}
-             <li>{{item.note}}</li>  
+             <li>{{item.title}}</li>  
+             <li>{{item.desc}}</li> 
+             <li>{{item.important}}</li> 
             {% endfor %}
         </div>
       </div>
