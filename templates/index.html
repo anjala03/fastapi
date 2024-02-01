@@ -48,14 +48,14 @@
         <form method="post">
             <div class="mb-3">
               <label for="title" class="form-label"></label>Note title</label>
-              <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+              <input type="text" class="form-control" name="title" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="Desc" class="form-label">Notes description</label>
-              <input type="text" class="form-control" id="Desc">
+              <label for="desc" class="form-label">Notes description</label>
+              <input type="text" class="form-control" name="desc">
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input" name="important" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
             
@@ -63,6 +63,11 @@
           </form>
           <div class="container">
             <h2> Your Notes</h2>
+            <!-- this is jinja2 if syntax-->
+
+            {% if not newdocs %}
+               No notes to display
+            {% endif %}
             <!-- this is jinja2 for loop syntax-->
             {% for item in newdocs %}
              <li>{{item.note}}</li>  
