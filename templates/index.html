@@ -56,13 +56,13 @@
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" name="important" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <label class="form-check-label" for="exampleCheck1">Importance status</label>
             </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
           <div class="container">
-            <h2> Your Notes</h2>
+            <h2> Your Notes Are Displayed Below: </h2>
             <!-- this is jinja2 if syntax-->
 
             {% if not newdocs %}
@@ -70,9 +70,10 @@
             {% endif %}
             <!-- this is jinja2 for loop syntax-->
             {% for item in newdocs %}
-             <li>{{item.title}}</li>  
-             <li>{{item.desc}}</li> 
-             <li>{{item.important}}</li> 
+             <li>(notes title):{{item.title}}
+                (notes description): {{item.desc}}
+                (important status): {{item.important}}</li>
+                
             {% endfor %}
         </div>
       </div>
