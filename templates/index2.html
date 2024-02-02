@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Method </title>
+    <!-- Additional head elements (stylesheets, scripts, etc.) can be included here -->
+</head>
+<body>
+    <!-- Page content goes here -->
+    <div class="container">
+        <h2> Your Notes Are Displayed Below: </h2>
+        <!-- this is jinja2 if syntax-->
+
+        {% if not newdocs %}
+           No notes to display
+        {% endif %}
+        <!-- this is jinja2 for loop syntax-->
+        {% for item in newdocs %}
+         <li><b>Notes Title: </b>{{item.title}}
+           <p><i>Notes Description:</i>{{item.desc}}, 
+            <i>Important Status:</i> {{item.important}}</p>
+        </li>
+            
+        {% endfor %}
+    </div>
+    <!-- Additional body content can be included here -->
+
+    <!-- Script tags for JavaScript can be included at the end of the body -->
+    <!-- <script src="your-script.js"></script> -->
+</body>
+</html>

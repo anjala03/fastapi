@@ -3,6 +3,7 @@ from routes.note import note
 from fastapi.staticfiles import StaticFiles
 
 app= FastAPI()
+#FastAPI app class, the main entrypoint to use FastAPI.
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(note)
 
